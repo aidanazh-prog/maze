@@ -54,7 +54,20 @@ def solve_maze(maze, x, y, end_x, end_y, visited):
     return False
 
 def main():
-    pass
+    rows, cols = 15, 15
+    maze = create_maze(rows, cols)
+
+    start_x, start_y = 1, 0
+    end_x, end_y = rows - 2, cols - 1
+
+    visited = [[False for _ in range(cols)] for _ in range(rows)]
+    solved = solve_maze(maze, start_x, start_y + 1, end_x, end_y - 1, visited)
+
+    if solved:
+        print("Maze with path:")
+    else:
+        print("No solution found.")
+    print_maze(maze)
 
 if __name__== "__main__":
     main()
