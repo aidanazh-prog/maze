@@ -22,6 +22,9 @@ def carve_passages(x, y, maze, rows, cols):
 maze[1][1] = PATH
 carve_passages(1, 1, maze, rows, cols)
 
+maze[1][0] = PATH  
+maze[rows - 2][cols - 1] = PATH  
+
     return maze
 def main():
     pass
