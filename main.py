@@ -26,6 +26,11 @@ maze[1][0] = PATH
 maze[rows - 2][cols - 1] = PATH  
 
     return maze
+
+def print_maze(maze):
+    for row in maze:
+        print(''.join(row))
+
 def main():
     pass
 
