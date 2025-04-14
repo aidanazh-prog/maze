@@ -2,6 +2,7 @@ import random
 
 WALL = '#'
 PATH = ''
+VISITED = '.'
 
 def create_maze(rows=10, cols=10):
     if rows <= 2 or cols <= 2:
@@ -30,6 +31,15 @@ maze[rows - 2][cols - 1] = PATH
 def print_maze(maze):
     for row in maze:
         print(''.join(row))
+
+def solve_maze(maze, x, y, end_x, end_y, visited):
+    if x == end_x and y == end_y:
+        maze[x][y] = VISITED
+        return True
+    if not (0 <= x < len(maze)) or not (0 <= y < len(maze[0])):
+        return False
+    if maze[x][y] != PATH or visited[x][y]:
+        return False
 
 def main():
     pass
