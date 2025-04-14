@@ -41,6 +41,18 @@ def solve_maze(maze, x, y, end_x, end_y, visited):
     if maze[x][y] != PATH or visited[x][y]:
         return False
 
+    visited[x][y] = True
+    maze[x][y] = VISITED
+
+    if (solve_maze(maze, x+1, y, end_x, end_y, visited) or
+        solve_maze(maze, x-1, y, end_x, end_y, visited) or
+        solve_maze(maze, x, y+1, end_x, end_y, visited) or
+        solve_maze(maze, x, y-1, end_x, end_y, visited)):
+        return True
+
+    maze[x][y] = PATH  # backtrack
+    return False
+
 def main():
     pass
 
