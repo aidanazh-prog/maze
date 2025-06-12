@@ -1,7 +1,7 @@
 import random
 
 WALL = '#'
-PATH = ''
+PATH = ' '
 VISITED = '.'
 
 def create_maze(rows=10, cols=10):
